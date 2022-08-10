@@ -19,7 +19,6 @@ Put the widget into a Stack widget, example:
 
 ```
 Stack(
-  alignment: Alignment.bottomLeft,
   children: [
     OneHandProgressController(
       size: 250,
