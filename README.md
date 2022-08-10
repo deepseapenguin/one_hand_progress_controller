@@ -9,7 +9,7 @@ Open an issue if you have any feature request.
 
 Allow user to control the progress of a video, music, etc with only their thumb. Below is an working example.
 
-https://user-images.githubusercontent.com/36293056/183841325-079da160-d2bb-4e16-b1b9-7c1f7c368513.mov
+<img src="https://user-images.githubusercontent.com/36293056/183881179-b51577ef-1f4b-481f-be59-943042cd4906.gif" width="300">
 
 the button and the onTap event is customizable, it can work with any video player as long as it support seeking, pause, play, or any other feature you need, and technically it could work with things other than video as long as it is something that able to control the progress value by the user.
 
