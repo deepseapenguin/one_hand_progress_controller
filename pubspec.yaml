@@ -1,6 +1,6 @@
 name: one_hand_progress_controller
 description: Progress controller design for one handed usage
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/deepseapenguin/one_hand_progress_controller
 
 environment:
