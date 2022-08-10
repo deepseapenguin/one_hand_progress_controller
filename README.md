@@ -1,7 +1,7 @@
 
 ## Flutter one hand progress controller
 
-Progress controller widget that represent in quarter circle design for one handed usage. \
+Progress controller widget that represent in quarter circle design for one handed usage. Support both hand. \
 Currently is more in a demo version to show how it looks like, not very customizable, will update soon. \
 Open an issue if you have any feature request.
 
@@ -9,7 +9,7 @@ Open an issue if you have any feature request.
 
 Allow user to control the progress of a video, music, etc with only their thumb. Below is an working example.
 
-https://i.imgur.com/n9TwtMu.mp4
+https://user-images.githubusercontent.com/36293056/183841325-079da160-d2bb-4e16-b1b9-7c1f7c368513.mov
 
 the button and the onTap event is customizable, it can work with any video player as long as it support seeking, pause, play, or any other feature you need, and technically it could work with things other than video as long as it is something that able to control the progress value by the user.
 
@@ -18,81 +18,33 @@ the button and the onTap event is customizable, it can work with any video playe
 Put the widget into a Stack widget, example:
 
 ```
-import 'package:flutter/material.dart';
-import 'package:one_hand_progress_controller/one_hand_progress_controller.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Showcase'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  double progress = 0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Stack(
-        alignment: Alignment.bottomLeft,
-        children: [
-          OneHandProgressController(
-            size: 250,
-            width: 50,
-            progress: progress,
-            onProgessChange: ((p) {
-              setState(() {
-                progress = p;
-              });
-            }),
-            actionButtons: [
-              ActionButton(
-                  radius: 150,
-                  onTap: () {},
-                  icon: const Icon(
-                    Icons.play_arrow,
-                    color: Colors.white,
-                    size: 30,
-                  ))
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
+Stack(
+  alignment: Alignment.bottomLeft,
+  children: [
+    OneHandProgressController(
+      size: 250,
+      width: 50,
+      progress: progress,
+      onProgessChange: ((p) {
+        setState(() {
+          progress = p;
+        });
+      }),
+      actionButtons: [
+        ActionButton(
+            radius: 150,
+            onTap: () {},
+            icon: const Icon(
+              Icons.play_arrow,
+              color: Colors.white,
+              size: 30,
+            ))
+      ],
+    ),
+  ],
+)
 
 ```
+<img src="https://i.imgur.com/O0beUKI.jpeg" width="300">
 
-![Basic example](https://i.imgur.com/O0beUKI.jpeg)
-
+full example can be found in `example` folder
